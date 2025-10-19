@@ -201,7 +201,7 @@ const Portfolio = () => {
       <text x="410" y="300" fontSize="10" textAnchor="middle" fill="#1e90ff" fontStyle="italic">Cooled fluid recycled back to reservoir</text>
       <rect x="40" y="340" width="1320" height="370" rx="8" fill="#f5f5f5" stroke="#ddd" strokeWidth="1"/>
       <text x="700" y="365" fontSize="14" fontWeight="bold" textAnchor="middle" fill="#333">Process Summary</text>
-      <text x="60" y="395" fontSize="11" fill="#333">Heat Extraction: Hot geothermal water from underground wells at 150-300°C is brought to the surface. Heat exchangers transfer thermal energy to a secondary fluid, which boils at high pressure to create steam. This process taps into Earth's renewable internal heat continuously.</text>
+      <text x="60" y="395" fontSize="11" fill="#333">Heat Extraction: Hot geothermal water from underground wells at 150-300°C is brought to the surface. Heat exchangers transfer thermal energy to a secondary fluid, which boils at high pressure to create steam. This process taps into Earth&apos;s renewable internal heat continuously.</text>
       <text x="60" y="425" fontSize="11" fill="#333">Power Generation: High-pressure steam drives turbine blades at high speeds, converting thermal energy into mechanical energy. The rotating turbine connects to a generator producing electricity through electromagnetic induction. Cooled fluid is recycled back, enabling continuous operation.</text>
       <text x="60" y="460" fontSize="11" fontWeight="bold" fill="#333">Key Metrics:</text>
       <text x="60" y="480" fontSize="10" fill="#333">Temperature Range: 150-300°C | Capacity Factor: 70-90% | System Efficiency: 10-15%</text>
@@ -409,3 +409,5 @@ return (
     </div>
   </>);
 };
+
+export default Portfolio;
