@@ -309,6 +309,7 @@ const Portfolio = () => {
 
       <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {/* LEFT SIDEBAR (1/4) */}
           <div className="lg:col-span-1">
             <div className="space-y-3 sticky top-24">
               <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider px-4">Activities</h3>
@@ -331,6 +332,7 @@ const Portfolio = () => {
             </div>
           </div>
 
+          {/* RIGHT CONTENT AREA (3/4) */}
           <div className="lg:col-span-3">
             <AnimatePresence mode="wait">
               <motion.div
@@ -360,7 +362,7 @@ const Portfolio = () => {
                       </div>
                     </motion.div>
 
-                      {/* Diagram Section */}
+                    {/* Diagram Section */}
                     <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
                        <h3 className="text-lg font-bold text-orange-400 mb-4">System Architecture Diagram</h3>
                        {current.diagram === "wave" && <WaveDiagram />}
@@ -368,41 +370,39 @@ const Portfolio = () => {
                        {current.diagram === "biomass" && <BiomassDiagram />}
                     </motion.div>
 
-                      {/* Explanation Section */}
+                    {/* System Explanation */}
                       <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
                       <h3 className="text-lg font-bold text-orange-400 mb-3">System Explanation</h3>
                       <p className="text-gray-300 leading-relaxed text-justify">{current.explanation}</p>
                     </motion.div>
-
-                      {/* Grid for New Sections */}
-                      <div className="grid md:grid-cols-1 gap-6">
-                        {/* Energy Source */}
-                        <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
-                          <h3 className="text-lg font-bold text-orange-400 mb-3">⚡ Energy Source</h3>
-                          <p className="text-gray-300 leading-relaxed">{current.energy_source}</p>
-                        </motion.div>
                         
-                        {/* Conversion Process */}
-                        <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
-                          <h3 className="text-lg font-bold text-orange-400 mb-3">🔄 Conversion Process</h3>
-                          <p className="text-gray-300 leading-relaxed">{current.conversion_process}</p>
-                        </motion.div>
+                    {/* Energy Source */}
+                    <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
+                      <h3 className="text-lg font-bold text-orange-400 mb-3">⚡ Energy Source</h3>
+                      <p className="text-gray-300 leading-relaxed">{current.energy_source}</p>
+                    </motion.div>
+                        
+                    {/* Conversion Process */}
+                    <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
+                      <h3 className="text-lg font-bold text-orange-400 mb-3">🔄 Conversion Process</h3>
+                      <p className="text-gray-300 leading-relaxed">{current.conversion_process}</p>
+                    </motion.div>
 
-                        {/* Output/Utilization */}
-                        <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
-                          <h3 className="text-lg font-bold text-orange-400 mb-3">💡 Output & Utilization</h3>
-                          <p className="text-gray-300 leading-relaxed">{current.output_utilization}</p>
-                        </motion.div>
+                    {/* Output/Utilization */}
+                    <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
+                      <h3 className="text-lg font-bold text-orange-400 mb-3">💡 Output & Utilization</h3>
+                      <p className="text-gray-300 leading-relaxed">{current.output_utilization}</p>
+                    </motion.div>
 
-                        {/* Real-world Application Relevance */}
-                        <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
-                          <h3 className="text-lg font-bold text-orange-400 mb-3">🌍 Real-world Application Relevance</h3>
-                          <p className="text-gray-300 leading-relaxed">{current.relevance}</p>
-                        </motion.div>
-                      </div>
+                    {/* Real-world Application Relevance */}
+                    <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
+                      <h3 className="text-lg font-bold text-orange-400 mb-3">🌍 Real-world Application Relevance</h3>
+                      <p className="text-gray-300 leading-relaxed">{current.relevance}</p>
+                    </motion.div>
 
-                    <motion.div variants={itemVariants}>
-                      <h3 className="text-lg font-bold text-orange-300 mb-4 px-1">Key Performance Metrics</h3>
+                    {/* Key Performance Metrics */}
+                      <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
+                      <h3 className="text-lg font-bold text-orange-400 mb-4">Key Performance Metrics</h3>
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {current.metrics?.map((metric, idx) => (
                           <div key={idx} className="bg-slate-800/70 p-4 rounded-lg text-center border border-slate-700 transition-transform duration-300 hover:-translate-y-1">
