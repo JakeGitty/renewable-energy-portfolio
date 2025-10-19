@@ -333,7 +333,7 @@ const Portfolio = () => {
                 <div className="bg-gradient-to-r from-orange-900/30 to-orange-800/20 rounded-xl p-6 border border-orange-500/30">
                   <h3 className="text-lg font-bold text-orange-300 mb-4">Key Performance Metrics</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {current.metrics.map((metric, idx) => (
+                    {current.metrics?.map((metric, idx) => (
                       <div key={idx} className="flex items-start gap-3">
                         <span className="text-orange-400 font-bold mt-1">⚡</span>
                         <span className="text-gray-300 text-sm">{metric}</span>
