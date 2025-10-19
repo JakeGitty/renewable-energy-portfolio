@@ -21,7 +21,7 @@ const Portfolio = () => {
       code: "Q6",
       icon: "🌊",
       energy_source: "Kinetic energy from ocean waves at coastal regions (2-5m waves).",
-      explanation: "This innovative system harnesses kinetic energy from ocean waves to power desalination processes for coastal communities. Wave capture devices absorb the mechanical motion of waves and convert it into hydraulic pressure. This hydraulic energy drives turbines connected to generators, producing electricity. The generated power then operates reverse osmosis membranes that separate fresh water from seawater through high-pressure filtration. The nutrient-rich brine byproduct is safely returned to the ocean, creating a sustainable cycle.",
+      explanation: "This innovative system harnesses kinetic energy from ocean waves to power desalination processes for coastal communities. Wave capture devices absorb the mechanical motion of waves and convert it into hydraulic pressure. This hydraulic energy drives turbines connected to generators, producing electricity. The generated power then operates reverse osmosis membranes that separate fresh water from seawater through high-pressure filtration. The nutrient-rich brine byproduct is safely returned to the ocean, creating a sustainable cycle.",
       conversion_process: "1. Kinetic Capture: Devices like point absorber buoys or oscillating water columns move with the waves. 2. Hydraulic Conversion: This motion drives a hydraulic system, pressurizing a fluid. 3. Electricity Generation: The pressurized fluid spins a turbine, which is connected to a generator that produces electrical energy.",
       output_utilization: "The primary output is electricity, which directly powers the reverse osmosis (RO) plant. The main product is desalinated fresh water, suitable for drinking and agriculture. A secondary output is concentrated brine, which is carefully dispersed back into the ocean.",
       relevance: "Directly addresses water scarcity in coastal communities. It offers a sustainable alternative to fossil fuel-powered desalination, significantly reducing both the carbon footprint and the operational cost of freshwater production. It is highly relevant for arid regions like Australia, the Middle East, and California.",
@@ -39,7 +39,7 @@ const Portfolio = () => {
       code: "Q7",
       icon: "🔥",
       energy_source: "Thermal energy from hot geothermal water or steam from underground wells (150-300°C).",
-      explanation: "Geothermal power plants tap into Earth's internal heat to generate clean electricity with exceptional reliability. Hot water from geothermal wells at 150-300°C is brought to the surface and passed through heat exchangers that transfer thermal energy to a secondary fluid, which boils to create steam. This high-pressure steam drives turbine blades at high speeds, converting thermal energy into mechanical energy. The rotating turbine shaft connects to a generator that produces electricity through electromagnetic induction.",
+      explanation: "Geothermal power plants tap into Earth's internal heat to generate clean electricity with exceptional reliability. Hot water from geothermal wells at 150-300°C is brought to the surface and passed through heat exchangers that transfer thermal energy to a secondary fluid, which boils to create steam. This high-pressure steam drives turbine blades at high speeds, converting thermal energy into mechanical energy. The rotating turbine shaft connects to a generator that produces electricity through electromagnetic induction.",
       conversion_process: "In a binary cycle plant, the hot geothermal fluid is passed through a heat exchanger, transferring its heat to a secondary fluid (like isobutane) with a lower boiling point. This secondary fluid flashes into high-pressure vapor, which then expands to spin a turbine. The turbine drives a generator to produce electricity.",
       output_utilization: "The main output is consistent, baseload electricity supplied to the power grid 24/7. Waste heat from the process can also be utilized for district heating, warming greenhouses, or for industrial applications like food dehydration.",
       relevance: "As one of the most reliable renewable sources, geothermal provides crucial baseload power that stabilizes energy grids, complementing intermittent sources like solar and wind. It's vital for achieving a stable, 100% renewable energy mix. Leading countries include the USA, Iceland, and the Philippines.",
@@ -57,7 +57,7 @@ const Portfolio = () => {
       code: "Q5",
       icon: "🌱",
       energy_source: "Chemical energy stored in organic biomass (agricultural waste, animal manure, food scraps).",
-      explanation: "This circular economy system converts agricultural and organic waste into renewable biogas energy while producing nutrient-rich fertilizer as a byproduct. Organic feedstock from dairy farms is collected and pre-treated through shredding and sorting to optimize decomposition. In sealed anaerobic digesters maintained at 35-37°C, specialized bacteria break down organic matter in oxygen-free conditions, producing biogas rich in methane (50-70%) and CO₂ (30-50%). The extracted biogas is purified and combusted in gas generators to produce electricity and heat.",
+      explanation: "This circular economy system converts agricultural and organic waste into renewable biogas energy while producing nutrient-rich fertilizer as a byproduct. Organic feedstock from dairy farms is collected and pre-treated through shredding and sorting to optimize decomposition. In sealed anaerobic digesters maintained at 35-37°C, specialized bacteria break down organic matter in oxygen-free conditions, producing biogas rich in methane (50-70%) and CO₂ (30-50%). The extracted biogas is purified and combusted in gas generators to produce electricity and heat.",
       conversion_process: "Organic matter is fed into an anaerobic digester, a sealed, oxygen-free tank. Microorganisms break down the biomass, releasing a mixture of gases, primarily methane ($CH_4$) and carbon dioxide ($CO_2$). This mixture is known as biogas.",
       output_utilization: "The raw biogas can be burned in a Combined Heat and Power (CHP) unit to generate both electricity and heat. Alternatively, it can be upgraded to biomethane (pure $CH_4$) and used as vehicle fuel or injected into the natural gas grid. The nutrient-rich byproduct, digestate, is used as an excellent organic fertilizer.",
       relevance: "Creates a perfect circular economy for farms. It manages organic waste, drastically reduces methane emissions from manure (a potent greenhouse gas), generates a renewable energy source, and produces a valuable fertilizer, reducing reliance on synthetic alternatives. This model is crucial for sustainable agriculture and waste management globally.",
@@ -299,20 +299,21 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
       <div className="border-b border-orange-500/20 bg-black/40 backdrop-blur sticky top-0 z-50">
-        {/* FIX #1: Reduced vertical padding from py-4 to py-3 */}
-        <div className="max-w-7xl mx-auto px-6 py-3">
-          <h1 className="text-3xl font-extrabold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent tracking-tight">
+        {/* FIX #1: Reduced header padding (py-2), font size (text-2xl), and bottom text size (text-xs) */}
+        <div className="max-w-7xl mx-auto px-6 py-2">
+          <h1 className="text-2xl font-extrabold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent tracking-tight">
             Clean & Green Energy Portfolio
           </h1>
-          <p className="text-gray-400 text-sm mt-1">Submitted by Jaykar Samuel Rajesh - RA2311003011579</p>
+          <p className="text-gray-400 text-xs mt-1">Submitted by Jaykar Samuel Rajesh - RA2311003011579</p>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* LEFT SIDEBAR */}
+          {/* LEFT SIDEBAR */}
           <div className="lg:w-1/4">
-            <div className="space-y-3 sticky top-24">
+            {/* FIX #1: Increased sticky top margin from 24 to 28 to ensure it clears the shorter header */}
+            <div className="space-y-3 sticky top-28">
               <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider px-4">Activities</h3>
               {activities.map((activity) => (
                 <button
@@ -333,7 +334,7 @@ const Portfolio = () => {
           	</div>
         	</div>
 
-          {/* RIGHT CONTENT AREA */}
+          {/* RIGHT CONTENT AREA */}
         	<div className="flex-1">
           	<AnimatePresence mode="wait">
             	<motion.div
@@ -402,9 +403,9 @@ const Portfolio = () => {
                   	</motion.div>
 
                   	{/* Key Performance Metrics */}
-                      <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
+                      <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
                     	<h3 className="text-lg font-bold text-orange-400 mb-4">Key Performance Metrics</h3>
-                        {/* FIX #2: Changed md:grid-cols-4 to lg:grid-cols-4 for better responsive grid */}
+                        {/* FIX #2: Changed to lg:grid-cols-4 to keep 2x2 grid on medium screens */}
                     	<div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                       	{current.metrics?.map((metric, idx) => (
                         	<div key={idx} className="bg-slate-800/70 p-4 rounded-lg text-center border border-slate-700 transition-transform duration-300 hover:-translate-y-1">
@@ -414,7 +415,6 @@ const Portfolio = () => {
                       	))}
                     	</div>
                   	</motion.div>
-
                 	</motion.div>
               	)}
             	</motion.div>
