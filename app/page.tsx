@@ -288,125 +288,124 @@ hidden: { opacity: 0, y: 20 },
 visible: { opacity: 1, y: 0 }
 };
 return (
-<>
-<div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
-{/* FIXED HEADER - Now not sticky, just at top */}
-<div className="border-b border-orange-500/20 bg-black/40 backdrop-blur w-full">
-<div className="max-w-full px-6 py-3">
-<h1 className="text-2xl font-extrabold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent tracking-tight">
-Clean & Green Energy Portfolio
-</h1>
-<p className="text-gray-400 text-xs mt-1">Submitted by Jaykar Samuel Rajesh - RA2311003011579</p>
-</div>
-</div>{/* MAIN LAYOUT */}
-    <div className="flex gap-6 px-6 py-8">
-      {/* LEFT SIDEBAR - Always on left */}
-      <div className="w-80 flex-shrink-0">
-        <div className="space-y-3 sticky top-24">
-          <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider px-4">Activities</h3>
-          {activities.map((activity) => (
-            <button
-              key={activity.id}
-              onClick={() => setActiveActivity(activity.id)}
-              className={`w-full text-left px-4 py-3 rounded-lg font-medium flex items-center gap-3 transition-all duration-300 ease-in-out transform ${
-                activeActivity === activity.id
-                  ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/30 scale-105'
-                  : 'bg-slate-700/50 text-gray-300 hover:bg-slate-700 hover:text-white hover:-translate-y-1 hover:scale-105'
-              }`}
+  <>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+      {/* MAIN LAYOUT */}
+      <div className="flex gap-6 px-6 py-8">
+        {/* LEFT SIDEBAR - Always on left */}
+        <div className="w-80 flex-shrink-0">
+          <div className="space-y-3 sticky top-24">
+            {/* Moved header content */}
+            <div className="mb-6 px-4">
+              <h1 className="text-xl font-extrabold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent tracking-tight">
+                Clean & Green Energy Activities
+              </h1>
+              <p className="text-gray-400 text-xs mt-1">Submitted by Jaykar Samuel Rajesh - RA2311003011579</p>
+            </div>
+            <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider px-4">Activities</h3>
+            {activities.map((activity) => (
+              <button
+                key={activity.id}
+                onClick={() => setActiveActivity(activity.id)}
+                className={`w-full text-left px-4 py-3 rounded-lg font-medium flex items-center gap-3 transition-all duration-300 ease-in-out transform ${
+                  activeActivity === activity.id
+                    ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/30 scale-105'
+                    : 'bg-slate-700/50 text-gray-300 hover:bg-slate-700 hover:text-white hover:-translate-y-1 hover:scale-105'
+                }`}
+              >
+                <span className="text-xl">{activity.icon}</span>
+                <span className="text-sm">{activity.title === "Home" ? "Home" : `Activity ${activity.id}`}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* RIGHT CONTENT AREA - Flexible */}
+        <div className="flex-1 min-w-0">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current.id}
+              initial="hidden"
+              animate="visible"
+              exit={{ opacity: 0 }}
+              variants={cardVariants}
+              transition={{ duration: 0.4 }}
             >
-              <span className="text-xl">{activity.icon}</span>
-              <span className="text-sm">{activity.title === "Home" ? "Home" : `Activity ${activity.id}`}</span>
-            </button>
-          ))}
+              {current.isHome ? (
+                <div className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl p-12 border border-orange-500/20 text-center space-y-6">
+                  <h2 className="text-5xl font-extrabold text-white">Clean and Green Energy Portfolio</h2>
+                  <div className="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto rounded"></div>
+                  <p className="text-xl text-gray-300">Submitted by Jaykar Samuel Rajesh</p>
+                  <p className="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto">{current.content}</p>
+                </div>
+              ) : (
+                <motion.div variants={cardVariants} className="space-y-6">
+                  <motion.div variants={itemVariants} className="space-y-2">
+                    <div className="flex items-center gap-4">
+                      <span className="text-5xl">{current.icon}</span>
+                      <div>
+                        <p className="text-sm font-bold text-orange-400">{current.code}</p>
+                        <h2 className="text-3xl font-extrabold text-white tracking-tight">{current.title}</h2>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Diagram Section */}
+                  <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
+                    <h3 className="text-lg font-bold text-orange-400 mb-4">System Architecture Diagram</h3>
+                    {current.diagram === "wave" && <WaveDiagram />}
+                    {current.diagram === "geothermal" && <GeothermalDiagram />}
+                    {current.diagram === "biomass" && <BiomassDiagram />}
+                  </motion.div>
+
+                  {/* System Explanation */}
+                  <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
+                    <h3 className="text-lg font-bold text-orange-400 mb-3">System Explanation</h3>
+                    <p className="text-gray-300 leading-relaxed text-justify">{current.explanation}</p>
+                  </motion.div>
+
+                  {/* Energy Source */}
+                  <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
+                    <h3 className="text-lg font-bold text-orange-400 mb-3">⚡ Energy Source</h3>
+                    <p className="text-gray-300 leading-relaxed">{current.energy_source}</p>
+                  </motion.div>
+
+                  {/* Conversion Process */}
+                  <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
+                    <h3 className="text-lg font-bold text-orange-400 mb-3">🔄 Conversion Process</h3>
+                    <p className="text-gray-300 leading-relaxed">{current.conversion_process}</p>
+                  </motion.div>
+
+                  {/* Output/Utilization */}
+                  <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
+                    <h3 className="text-lg font-bold text-orange-400 mb-3">💡 Output & Utilization</h3>
+                    <p className="text-gray-300 leading-relaxed">{current.output_utilization}</p>
+                  </motion.div>
+
+                  {/* Real-world Application Relevance */}
+                  <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
+                    <h3 className="text-lg font-bold text-orange-400 mb-3">🌍 Real-world Application Relevance</h3>
+                    <p className="text-gray-300 leading-relaxed">{current.relevance}</p>
+                  </motion.div>
+
+                  {/* Key Performance Metrics - FIXED ALIGNMENT */}
+                  <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
+                    <h3 className="text-lg font-bold text-orange-400 mb-4">Key Performance Metrics</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full justify-items-center">
+                      {current.metrics?.map((metric, idx) => (
+                        <div key={idx} className="bg-slate-800/70 p-4 rounded-lg text-center border border-slate-700 transition-transform duration-300 hover:-translate-y-1">
+                          <p className="text-sm text-orange-400 font-semibold">{metric.label}</p>
+                          <p className="text-lg font-bold text-white mt-2 break-words">{metric.value}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                </motion.div>
+              )}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
-
-      {/* RIGHT CONTENT AREA - Flexible */}
-      <div className="flex-1 min-w-0">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={current.id}
-            initial="hidden"
-            animate="visible"
-            exit={{ opacity: 0 }}
-            variants={cardVariants}
-            transition={{ duration: 0.4 }}
-          >
-            {current.isHome ? (
-              <div className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl p-12 border border-orange-500/20 text-center space-y-6">
-                <h2 className="text-5xl font-extrabold text-white">Clean and Green Energy Portfolio</h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto rounded"></div>
-                <p className="text-xl text-gray-300">Submitted by Jaykar Samuel Rajesh</p>
-                <p className="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto">{current.content}</p>
-              </div>
-            ) : (
-              <motion.div variants={cardVariants} className="space-y-6">
-                <motion.div variants={itemVariants} className="space-y-2">
-                  <div className="flex items-center gap-4">
-                    <span className="text-5xl">{current.icon}</span>
-                    <div>
-                      <p className="text-sm font-bold text-orange-400">{current.code}</p>
-                      <h2 className="text-3xl font-extrabold text-white tracking-tight">{current.title}</h2>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Diagram Section */}
-                <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
-                  <h3 className="text-lg font-bold text-orange-400 mb-4">System Architecture Diagram</h3>
-                  {current.diagram === "wave" && <WaveDiagram />}
-                  {current.diagram === "geothermal" && <GeothermalDiagram />}
-                  {current.diagram === "biomass" && <BiomassDiagram />}
-                </motion.div>
-
-                {/* System Explanation */}
-                <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
-                  <h3 className="text-lg font-bold text-orange-400 mb-3">System Explanation</h3>
-                  <p className="text-gray-300 leading-relaxed text-justify">{current.explanation}</p>
-                </motion.div>
-
-                {/* Energy Source */}
-                <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
-                  <h3 className="text-lg font-bold text-orange-400 mb-3">⚡ Energy Source</h3>
-                  <p className="text-gray-300 leading-relaxed">{current.energy_source}</p>
-                </motion.div>
-
-                {/* Conversion Process */}
-                <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
-                  <h3 className="text-lg font-bold text-orange-400 mb-3">🔄 Conversion Process</h3>
-                  <p className="text-gray-300 leading-relaxed">{current.conversion_process}</p>
-                </motion.div>
-
-                {/* Output/Utilization */}
-                <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
-                  <h3 className="text-lg font-bold text-orange-400 mb-3">💡 Output & Utilization</h3>
-                  <p className="text-gray-300 leading-relaxed">{current.output_utilization}</p>
-                </motion.div>
-
-                {/* Real-world Application Relevance */}
-                <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
-                  <h3 className="text-lg font-bold text-orange-400 mb-3">🌍 Real-world Application Relevance</h3>
-                  <p className="text-gray-300 leading-relaxed">{current.relevance}</p>
-                </motion.div>
-
-                {/* Key Performance Metrics - FIXED ALIGNMENT */}
-                <motion.div variants={itemVariants} className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
-                  <h3 className="text-lg font-bold text-orange-400 mb-4">Key Performance Metrics</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
-                    {current.metrics?.map((metric, idx) => (
-                      <div key={idx} className="bg-slate-800/70 p-4 rounded-lg text-center border border-slate-700 transition-transform duration-300 hover:-translate-y-1">
-                        <p className="text-sm text-orange-400 font-semibold">{metric.label}</p>
-                        <p className="text-lg font-bold text-white mt-2 break-words">{metric.value}</p>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              </motion.div>
-            )}
-          </motion.div>
-        </AnimatePresence>
-      </div>
     </div>
-  </div>
-</>);
+  </>);
 };
