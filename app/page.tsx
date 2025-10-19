@@ -5,6 +5,7 @@ const Portfolio = () => {
   const [activeActivity, setActiveActivity] = useState(0);
 
   const activities = [
+    // ... (your activities array remains exactly the same)
     {
       id: 0,
       title: "Home",
@@ -29,8 +30,7 @@ const Portfolio = () => {
       code: "Q7",
       icon: "🔥",
       energy_source: "Hot geothermal water from underground wells (150-300°C)",
-      // FIXED: Changed "Earth's" to "Earth&apos;s" in the explanation below
-      explanation: "Geothermal power plants tap into Earth&apos;s internal heat to generate clean electricity with exceptional reliability. Hot water from geothermal wells at 150-300°C is brought to the surface and passed through heat exchangers that transfer thermal energy to a secondary fluid, which boils to create steam. This high-pressure steam drives turbine blades at high speeds, converting thermal energy into mechanical energy. The rotating turbine shaft connects to a generator that produces electricity through electromagnetic induction.",
+      explanation: "Geothermal power plants tap into Earth's internal heat to generate clean electricity with exceptional reliability. Hot water from geothermal wells at 150-300°C is brought to the surface and passed through heat exchangers that transfer thermal energy to a secondary fluid, which boils to create steam. This high-pressure steam drives turbine blades at high speeds, converting thermal energy into mechanical energy. The rotating turbine shaft connects to a generator that produces electricity through electromagnetic induction.",
       metrics: ["Temperature Range: 150-300°C", "Capacity Factor: 70-90%", "System Efficiency: 10-15%", "Baseload Power: 24/7 Operation"],
       diagram: "geothermal"
     },
@@ -48,6 +48,7 @@ const Portfolio = () => {
 
   const current = activities[activeActivity];
 
+  // ... (Your SVG diagram components WaveDiagram, GeothermalDiagram, BiomassDiagram remain the same)
   const WaveDiagram = () => (
     <svg viewBox="0 0 1400 750" className="w-full">
       <defs>
@@ -119,7 +120,6 @@ const Portfolio = () => {
       <text x="700" y="700" fontSize="9" textAnchor="middle" fill="#666" fontStyle="italic">Wave energy + Desalination = Sustainable fresh water solution for coastal regions</text>
     </svg>
   );
-
   const GeothermalDiagram = () => (
     <svg viewBox="0 0 1400 750" className="w-full">
       <defs>
@@ -187,7 +187,6 @@ const Portfolio = () => {
       <text x="700" y="700" fontSize="9" textAnchor="middle" fill="#666" fontStyle="italic">Geothermal heat → 24/7 clean electricity for reliable baseload power generation</text>
     </svg>
   );
-
   const BiomassDiagram = () => (
     <svg viewBox="0 0 1400 750" className="w-full">
       <defs>
@@ -260,6 +259,7 @@ const Portfolio = () => {
     </svg>
   );
 
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
       <div className="border-b border-orange-500/20 bg-black/40 backdrop-blur sticky top-0 z-50">
@@ -280,11 +280,14 @@ const Portfolio = () => {
                 <button
                   key={activity.id}
                   onClick={() => setActiveActivity(activity.id)}
-                  className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 font-medium flex items-center gap-3 ${
-                    activeActivity === activity.id
-                      ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/30'
-                      : 'bg-slate-700/50 text-gray-300 hover:bg-slate-700 hover:text-white'
-                  }`}
+                  className={`w-full text-left px-4 py-3 rounded-lg font-medium flex items-center gap-3
+                    ${/* CHANGE 1: Added transitions and transforms for the "haptic" feel */''}
+                    transition-all duration-300 ease-in-out transform
+                    ${
+                      activeActivity === activity.id
+                        ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/30 scale-105'
+                        : 'bg-slate-700/50 text-gray-300 hover:bg-slate-700 hover:text-white hover:-translate-y-1 hover:scale-105'
+                    }`}
                 >
                   <span className="text-xl">{activity.icon}</span>
                   <span className="text-sm">{activity.title === "Home" ? "Home" : `Activity ${activity.id}`}</span>
@@ -312,25 +315,26 @@ const Portfolio = () => {
                     </div>
                   </div>
                 </div>
-
-                <div className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10">
+                
+                {/* CHANGE 2: Added transitions and hover effects to ALL content cards for consistency */}
+                <div className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
                   <h3 className="text-lg font-bold text-orange-400 mb-4">System Architecture Diagram</h3>
                   {current.diagram === "wave" && <WaveDiagram />}
                   {current.diagram === "geothermal" && <GeothermalDiagram />}
                   {current.diagram === "biomass" && <BiomassDiagram />}
                 </div>
 
-                <div className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10">
+                <div className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
                   <h3 className="text-lg font-bold text-orange-400 mb-3">Energy Source</h3>
                   <p className="text-gray-300 leading-relaxed">{current.energy_source}</p>
                 </div>
 
-                <div className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10">
+                <div className="bg-slate-800/60 backdrop-blur rounded-xl p-6 border border-orange-500/10 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
                   <h3 className="text-lg font-bold text-orange-400 mb-3">System Explanation</h3>
                   <p className="text-gray-300 leading-relaxed text-justify">{current.explanation}</p>
                 </div>
 
-                <div className="bg-gradient-to-r from-orange-900/30 to-orange-800/20 rounded-xl p-6 border border-orange-500/30">
+                <div className="bg-gradient-to-r from-orange-900/30 to-orange-800/20 rounded-xl p-6 border border-orange-500/30 transition-all duration-300 hover:border-orange-500/50 hover:scale-[1.02]">
                   <h3 className="text-lg font-bold text-orange-300 mb-4">Key Performance Metrics</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {current.metrics?.map((metric, idx) => (
