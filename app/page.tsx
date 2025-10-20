@@ -349,7 +349,6 @@ return (
                     <div className="flex items-center gap-4">
                       <span className="text-5xl">{current.icon}</span>
                       <div>
-                        <p className="text-sm font-bold text-orange-400">{current.code}</p>
                         <h2 className="text-3xl font-extrabold text-white tracking-tight">{current.title}</h2>
                       </div>
                     </div>
