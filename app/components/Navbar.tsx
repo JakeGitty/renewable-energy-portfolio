@@ -1,16 +1,20 @@
 'use client';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import Link from 'next/link';
+// import Link from 'next/link'; // No longer needed for internal navigation
 
-const Navbar = () => {
+export interface NavbarProps {
+  onActivityClick: (id: number) => void;
+}
+
+const Navbar = ({ onActivityClick }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const activities = [
-    { id: 0, title: 'Home', icon: '🏠', href: '/' },
-    { id: 1, title: 'Activity 1', icon: '🌊', href: '/activity1' },
-    { id: 2, title: 'Activity 2', icon: '🔥', href: '/activity2' },
-    { id: 3, title: 'Activity 3', icon: '🌱', href: '/activity3' },
+    { id: 0, title: 'Home', icon: '🏠' }, // Removed href
+    { id: 1, title: 'Activity 1', icon: '🌊' }, // Removed href
+    { id: 2, title: 'Activity 2', icon: '🔥' }, // Removed href
+    { id: 3, title: 'Activity 3', icon: '🌱' }, // Removed href
   ];
 
   return (
@@ -26,16 +30,19 @@ const Navbar = () => {
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Desktop Menu */}
+        {/* Desktop Menu - remains unchanged, as it's hidden on mobile */}
         <ul className="hidden md:flex gap-6">
           {activities.map((act) => (
             <li key={act.id}>
-              <Link
-                href={act.href}
+              <button
+                onClick={() => {
+                  onActivityClick(act.id);
+                  setIsOpen(false);
+                }}
                 className="flex items-center gap-2 hover:text-orange-400 transition"
               >
                 <span>{act.icon}</span> {act.title}
-              </Link>
+              </button>
             </li>
           ))}
         </ul>
@@ -46,13 +53,15 @@ const Navbar = () => {
         <ul className="flex flex-col md:hidden bg-[#0B1623] px-6 pb-4 transition-all duration-300">
           {activities.map((act) => (
             <li key={act.id} className="py-2 border-b border-gray-700">
-              <Link
-                href={act.href}
+              <button
+                onClick={() => {
+                  onActivityClick(act.id);
+                  setIsOpen(false);
+                }}
                 className="flex items-center gap-2 hover:text-orange-400 transition"
-                onClick={() => setIsOpen(false)}
               >
                 <span>{act.icon}</span> {act.title}
-              </Link>
+              </button>
             </li>
           ))}
         </ul>
