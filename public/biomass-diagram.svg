@@ -1,167 +1,97 @@
-<svg viewBox="0 0 1500 700" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bgr1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#8b4513;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#a0522d;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="bgr2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#a0826d;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#b8956a;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="bgr3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ff8c00;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#ffa500;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="bgr4" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#ffed4e;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="bgr5" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#32cd32;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#00fa9a;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="bgr6" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#228b22;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#32cd32;stop-opacity:1" />
-    </linearGradient>
-    <filter id="bshadow" x="-50%" y="-50%" width="200%" height="200%">
-      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
-    </filter>
-    <marker id="barrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-      <polygon points="0 0, 10 3, 0 6" fill="#333"/>
-    </marker>
-    <marker id="barrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-      <polygon points="0 0, 10 3, 0 6" fill="#228b22"/>
+<svg width="950" height="520" viewBox="0 0 950 520" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect width="100%" height="100%" fill="white"/> <defs>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333" />
     </marker>
   </defs>
 
-  <!-- Add background rectangle with white fill -->
-  <rect x="0" y="0" width="1500" height="700" fill="white"/>
+  <text x="475" y="35" font-size="24" font-weight="bold" text-anchor="middle">Biomass-Based Biogas Generation System for Dairy Farm</text>
+  
+  <text x="110" y="80" font-size="12" fill="#555" text-anchor="start">Biogas Energy Flow</text>
 
-  <!-- Title -->
-  <text x="750" y="50" font-size="42" font-weight="bold" text-anchor="middle" fill="#1a1a1a" font-family="Arial, sans-serif">
-    Biomass-Based Biogas Generation System for Dairy Farm
-  </text>
+  <g>
+    <rect x="35" y="100" width="130" height="80" rx="10" fill="#8B5E34"/>
+    <text fill="white" font-size="13" font-weight="bold" text-anchor="middle">
+      <tspan x="100" y="125">Biomass</tspan>
+      <tspan x="100" dy="1.2em">Collection</tspan>
+    </text>
+    <text x="100" y="165" fill="#f0f0f0" font-size="11" text-anchor="middle">Agricultural waste</text>
+  </g>
+  <line x1="165" y1="140" x2="185" y2="140" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
 
-  <!-- Block 1: Biomass Collection -->
-  <rect x="30" y="140" width="180" height="160" rx="20" fill="url(#bgr1)" filter="url(#bshadow)"/>
-  <text x="120" y="185" font-size="20" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
-    Biomass
-  </text>
-  <text x="120" y="207" font-size="20" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
-    Collection
-  </text>
-  <text x="120" y="232" font-size="13" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
-    Agricultural waste
-  </text>
+  <g>
+    <rect x="185" y="100" width="130" height="80" rx="10" fill="#C8A165"/>
+    <text fill="white" font-size="13" font-weight="bold" text-anchor="middle">
+      <tspan x="250" y="125">Pre-treatment</tspan>
+    </text>
+    <text fill="#FEFEE2" font-size="11" text-anchor="middle">
+      <tspan x="250" y="150">Shredding &amp; sorting</tspan>
+      <tspan x="250" dy="1.2em">Size reduction</tspan>
+    </text>
+  </g>
+  <line x1="315" y1="140" x2="335" y2="140" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
 
-  <!-- Arrow 1 -->
-  <path d="M 210 220 L 250 220" stroke="#333" stroke-width="3" fill="none" marker-end="url(#barrowhead)"/>
+  <g>
+    <rect x="335" y="100" width="130" height="80" rx="10" fill="#FFA500"/>
+    <text fill="white" font-size="13" font-weight="bold" text-anchor="middle">
+      <tspan x="400" y="125">Anaerobic</tspan>
+      <tspan x="400" dy="1.2em">Digestion</tspan>
+    </text>
+    <text x="400" y="165" fill="#FEFEE2" font-size="11" text-anchor="middle">35-37°C sealed tank</text>
+  </g>
+  <line x1="465" y1="140" x2="485" y2="140" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
 
-  <!-- Block 2: Pre-treatment -->
-  <rect x="250" y="140" width="180" height="160" rx="20" fill="url(#bgr2)" filter="url(#bshadow)"/>
-  <text x="340" y="190" font-size="20" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
-    Pre-treatment
-  </text>
-  <text x="340" y="215" font-size="13" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
-    Shredding & sorting
-  </text>
-  <text x="340" y="232" font-size="13" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
-    Size reduction
-  </text>
+  <g>
+    <rect x="485" y="100" width="130" height="80" rx="10" fill="#FFD700"/>
+    <text fill="#444" font-size="13" font-weight="bold" text-anchor="middle">
+      <tspan x="550" y="125">Biogas</tspan>
+      <tspan x="550" dy="1.2em">Extraction</tspan>
+    </text>
+    <text x="550" y="165" fill="#444" font-size="11" text-anchor="middle">50-70% CH₄</text>
+  </g>
+  <line x1="615" y1="140" x2="635" y2="140" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
 
-  <!-- Arrow 2 -->
-  <path d="M 430 220 L 470 220" stroke="#333" stroke-width="3" fill="none" marker-end="url(#barrowhead)"/>
+  <g>
+    <rect x="635" y="100" width="130" height="80" rx="10" fill="#90EE90"/>
+    <text fill="#333" font-size="13" font-weight="bold" text-anchor="middle">
+      <tspan x="700" y="125">Energy</tspan>
+      <tspan x="700" dy="1.2em">Generation</tspan>
+    </text>
+    <text x="700" y="165" fill="#333" font-size="11" text-anchor="middle">Power &amp; Heat</text>
+  </g>
+  <line x1="765" y1="140" x2="785" y2="140" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
 
-  <!-- Block 3: Anaerobic Digestion -->
-  <rect x="470" y="140" width="180" height="160" rx="20" fill="url(#bgr3)" filter="url(#bshadow)"/>
-  <text x="560" y="180" font-size="18" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
-    Anaerobic
-  </text>
-  <text x="560" y="202" font-size="18" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
-    Digestion
-  </text>
-  <text x="560" y="227" font-size="13" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
-    35-37°C sealed tank
-  </text>
+  <g>
+    <rect x="785" y="100" width="130" height="80" rx="10" fill="#32CD32"/>
+    <text fill="white" font-size="13" font-weight="bold" text-anchor="middle">
+      <tspan x="850" y="125">Output</tspan>
+      <tspan x="850" dy="1.2em">Products</tspan>
+    </text>
+    <text fill="#f0f0f0" font-size="11" text-anchor="middle">
+        <tspan x="850" y="158">Electricity, heat,</tspan>
+        <tspan x="850" dy="1.2em">biofertilizer</tspan>
+    </text>
+  </g>
 
-  <!-- Arrow 3 -->
-  <path d="M 650 220 L 690 220" stroke="#333" stroke-width="3" fill="none" marker-end="url(#barrowhead)"/>
+  <path d="M 550 180 L 550 250 L 100 250 L 100 180" stroke="#4CAF50" stroke-width="2" stroke-dasharray="5,5" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="325" y="265" font-size="11" fill="#333" text-anchor="middle">Digestate (nutrient-rich fertilizer) returned to agriculture</text>
 
-  <!-- Block 4: Biogas Extraction -->
-  <rect x="690" y="140" width="180" height="160" rx="20" fill="url(#bgr4)" filter="url(#bshadow)"/>
-  <text x="780" y="185" font-size="20" font-weight="bold" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">
-    Biogas
-  </text>
-  <text x="780" y="207" font-size="20" font-weight="bold" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">
-    Extraction
-  </text>
-  <text x="780" y="232" font-size="13" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">
-    50-70% CH₄
-  </text>
+  <g>
+    <rect x="35" y="300" width="880" height="80" rx="5" fill="#f5f5f5" stroke="#ccc"/>
+    <text x="50" y="320" font-size="12" font-weight="bold">Process Summary: Biomass to Biogas Energy</text>
+    <text x="50" y="345" font-size="12" fill="#333">
+        Organic biomass (manure, waste) collected → Pre-treatment through shredding and sorting → Anaerobic digestion in sealed tank (35-37°C) →
+    </text>
+    <text x="50" y="365" font-size="12" fill="#333">
+        Biogas extraction (50-70% methane) → Combustion generates electricity and heat → Nutrient-rich digestate becomes biofertilizer →
+    </text>
+  </g>
 
-  <!-- Arrow 4 -->
-  <path d="M 870 220 L 910 220" stroke="#333" stroke-width="3" fill="none" marker-end="url(#barrowhead)"/>
+  <g>
+    <rect x="35" y="400" width="880" height="50" rx="5" fill="#e8f5e9" stroke="#a5d6a7"/>
+    <text x="475" y="430" font-size="12" fill="#1b5e20" text-anchor="middle">
+      Biogas Yield: 0.2-0.3 m³/kg | Methane Content: 50-70% | System Efficiency: 75-85% | Processing Time: 20-40 days
+    </text>
+  </g>
 
-  <!-- Block 5: Energy Generation -->
-  <rect x="910" y="140" width="180" height="160" rx="20" fill="url(#bgr5)" filter="url(#bshadow)"/>
-  <text x="1000" y="180" font-size="18" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
-    Energy
-  </text>
-  <text x="1000" y="202" font-size="18" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
-    Generation
-  </text>
-  <text x="1000" y="227" font-size="13" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
-    Power & Heat
-  </text>
-
-  <!-- Arrow 5 -->
-  <path d="M 1090 220 L 1130 220" stroke="#333" stroke-width="3" fill="none" marker-end="url(#barrowhead)"/>
-
-  <!-- Block 6: Output Products -->
-  <rect x="1130" y="140" width="180" height="160" rx="20" fill="url(#bgr6)" filter="url(#bshadow)"/>
-  <text x="1220" y="185" font-size="20" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
-    Output
-  </text>
-  <text x="1220" y="207" font-size="20" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
-    Products
-  </text>
-  <text x="1220" y="232" font-size="13" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
-    Electricity, heat,
-  </text>
-  <text x="1220" y="249" font-size="13" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
-    biofertilizer
-  </text>
-
-  <!-- Return Loop - Digestate to Agriculture -->
-  <path d="M 780 300 L 780 380 L 120 380 L 120 300" stroke="#228b22" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#barrowhead2)"/>
-  <text x="450" y="410" font-size="12" text-anchor="middle" fill="#228b22" font-family="Arial, sans-serif" font-style="italic">
-    Digestate (nutrient-rich fertilizer) returned to agriculture
-  </text>
-
-  <!-- Top label: Power flow -->
-  <text x="450" y="125" font-size="11" text-anchor="middle" fill="#666" font-family="Arial, sans-serif">
-    Biogas Energy Flow
-  </text>
-
-  <!-- Summary Box -->
-  <rect x="30" y="480" width="1430" height="150" rx="15" fill="#f0f0f0" stroke="#666" stroke-width="2"/>
-  <text x="745" y="510" font-size="16" font-weight="bold" text-anchor="middle" fill="#1a1a1a" font-family="Arial, sans-serif">
-    Process Summary: Biomass to Biogas Energy
-  </text>
-  <text x="745" y="540" font-size="13" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">
-    Organic biomass (manure, waste) collected → Pre-treatment through shredding and sorting → Anaerobic digestion in sealed tank (35-37°C) →
-  </text>
-  <text x="745" y="565" font-size="13" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">
-    Biogas extraction (50-70% methane) → Combustion generates electricity and heat → Nutrient-rich digestate becomes biofertilizer →
-  </text>
-  <text x="745" y="590" font-size="13" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">
-    Circular economy cycle with 80-90% waste reduction | Zero landfill impact | Clean renewable energy with improved soil health
-  </text>
-
-  <!-- Key metrics box -->
-  <rect x="30" y="650" width="1430" height="35" rx="10" fill="#f0fdf4" stroke="#228b22" stroke-width="1"/>
-  <text x="745" y="672" font-size="12" text-anchor="middle" fill="#228b22" font-family="Arial, sans-serif">
-    Biogas Yield: 0.2-0.3 m³/kg | Methane Content: 50-70% | System Efficiency: 75-85% | Processing Time: 20-40 days
-  </text>
 </svg>
