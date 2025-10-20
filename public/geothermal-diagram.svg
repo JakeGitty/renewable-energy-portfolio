@@ -1,64 +1,160 @@
-<svg viewBox="0 0 1400 750" className="w-full bg-white rounded-md">
-      <defs>
-        <linearGradient id="ggrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#1e90ff" stopOpacity="1" />
-          <stop offset="100%" stopColor="#00bfff" stopOpacity="1" />
-        </linearGradient>
-        <linearGradient id="ggrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#ff8c00" stopOpacity="1" />
-          <stop offset="100%" stopColor="#ffa500" stopOpacity="1" />
-        </linearGradient>
-        <linearGradient id="ggrad3" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#ffd700" stopOpacity="1" />
-          <stop offset="100%" stopColor="#ffed4e" stopOpacity="1" />
-        </linearGradient>
-        <linearGradient id="ggrad4" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#8b4513" stopOpacity="1" />
-          <stop offset="100%" stopColor="#a0522d" stopOpacity="1" />
-        </linearGradient>
-        <linearGradient id="ggrad5" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#228b22" stopOpacity="1" />
-          <stop offset="100%" stopColor="#32cd32" stopOpacity="1" />
-        </linearGradient>
-        <filter id="gshadow">
-          <feDropShadow dx="2" dy="2" stdDeviation="3" floodOpacity="0.3"/>
-        </filter>
-        <marker id="garrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-          <polygon points="0 0, 10 3, 0 6" fill="#333"/>
-        </marker>
-      </defs>
-      <text x="700" y="45" fontSize="28" fontWeight="bold" textAnchor="middle" fill="#333">Geothermal Power Plant System</text>
-      <rect x="40" y="100" width="160" height="120" rx="10" fill="url(#ggrad1)" filter="url(#gshadow)"/>
-      <text x="120" y="135" fontSize="13" fontWeight="bold" textAnchor="middle" fill="white">Heat Source</text>
-      <text x="120" y="153" fontSize="9" textAnchor="middle" fill="white">150-300°C</text>
-      <path d="M 200 160 L 235 160" stroke="#333" strokeWidth="2" fill="none" markerEnd="url(#garrow)"/>
-      <rect x="235" y="100" width="160" height="120" rx="10" fill="url(#ggrad2)" filter="url(#gshadow)"/>
-      <text x="315" y="135" fontSize="14" fontWeight="bold" textAnchor="middle" fill="white">Heat</text>
-      <text x="315" y="155" fontSize="14" fontWeight="bold" textAnchor="middle" fill="white">Exchanger</text>
-      <path d="M 395 160 L 430 160" stroke="#333" strokeWidth="2" fill="none" markerEnd="url(#garrow)"/>
-      <rect x="430" y="100" width="160" height="120" rx="10" fill="url(#ggrad3)" filter="url(#gshadow)"/>
-      <text x="510" y="130" fontSize="13" fontWeight="bold" textAnchor="middle" fill="#333">Steam</text>
-      <text x="510" y="147" fontSize="13" fontWeight="bold" textAnchor="middle" fill="#333">Generation</text>
-      <path d="M 590 160 L 625 160" stroke="#333" strokeWidth="2" fill="none" markerEnd="url(#garrow)"/>
-      <rect x="625" y="100" width="160" height="120" rx="10" fill="url(#ggrad2)" filter="url(#gshadow)"/>
-      <text x="705" y="135" fontSize="14" fontWeight="bold" textAnchor="middle" fill="white">Turbine</text>
-      <text x="705" y="155" fontSize="10" textAnchor="middle" fill="white">Rotation</text>
-      <path d="M 785 160 L 820 160" stroke="#333" strokeWidth="2" fill="none" markerEnd="url(#garrow)"/>
-      <rect x="820" y="100" width="160" height="120" rx="10" fill="url(#ggrad4)" filter="url(#gshadow)"/>
-      <text x="900" y="135" fontSize="14" fontWeight="bold" textAnchor="middle" fill="white">Generator</text>
-      <text x="900" y="155" fontSize="10" textAnchor="middle" fill="white">Induction</text>
-      <path d="M 980 160 L 1015 160" stroke="#333" strokeWidth="2" fill="none" markerEnd="url(#garrow)"/>
-      <rect x="1015" y="100" width="160" height="120" rx="10" fill="url(#ggrad5)" filter="url(#gshadow)"/>
-      <text x="1095" y="135" fontSize="14" fontWeight="bold" textAnchor="middle" fill="white">Power</text>
-      <text x="1095" y="155" fontSize="14" fontWeight="bold" textAnchor="middle" fill="white">Output</text>
-      <path d="M 705 220 L 705 280 L 120 280 L 120 220" stroke="#1e90ff" strokeWidth="2" fill="none" strokeDasharray="5,5" markerEnd="url(#garrow)"/>
-      <text x="410" y="300" fontSize="10" textAnchor="middle" fill="#1e90ff" fontStyle="italic">Cooled fluid recycled back to reservoir</text>
-      <rect x="40" y="340" width="1320" height="370" rx="8" fill="#f5f5f5" stroke="#ddd" strokeWidth="1"/>
-      <text x="700" y="365" fontSize="14" fontWeight="bold" textAnchor="middle" fill="#333">Process Summary</text>
-      <text x="60" y="395" fontSize="11" fill="#333">Heat Extraction: Hot geothermal water from underground wells at 150-300°C is brought to the surface. Heat exchangers transfer thermal energy to a secondary fluid, which boils at high pressure to create steam. This process taps into Earth&apos;s renewable internal heat continuously.</text>
-      <text x="60" y="425" fontSize="11" fill="#333">Power Generation: High-pressure steam drives turbine blades at high speeds, converting thermal energy into mechanical energy. The rotating turbine connects to a generator producing electricity through electromagnetic induction. Cooled fluid is recycled back, enabling continuous operation.</text>
-      <text x="60" y="460" fontSize="11" fontWeight="bold" fill="#333">Key Metrics:</text>
-      <text x="60" y="480" fontSize="10" fill="#333">Temperature Range: 150-300°C | Capacity Factor: 70-90% | System Efficiency: 10-15%</text>
-      <text x="60" y="500" fontSize="10" fill="#333">24/7 Baseload Operation | Zero CO₂ emissions | Minimal Land Use | Highest reliability among renewables</text>
-      <text x="700" y="700" fontSize="9" textAnchor="middle" fill="#666" fontStyle="italic">Geothermal heat → 24/7 clean electricity for reliable baseload power generation</text>
-    </svg>
+<svg viewBox="0 0 1500 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ggr1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e90ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00bfff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="ggr2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff8c00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffa500;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="ggr3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffed4e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="ggr4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b4513;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a0522d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="ggr5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#228b22;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#32cd32;stop-opacity:1" />
+    </linearGradient>
+    <filter id="gshadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    <marker id="garrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333"/>
+    </marker>
+    <marker id="garrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#1e90ff"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="750" y="50" font-size="42" font-weight="bold" text-anchor="middle" fill="#1a1a1a" font-family="Arial, sans-serif">
+    Geothermal Power Plant System for Electricity Generation
+  </text>
+
+  <!-- Block 1: Heat Source -->
+  <rect x="30" y="140" width="200" height="160" rx="20" fill="url(#ggr1)" filter="url(#gshadow)"/>
+  <text x="130" y="190" font-size="22" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    Heat Source
+  </text>
+  <text x="130" y="215" font-size="13" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    Underground wells
+  </text>
+  <text x="130" y="232" font-size="13" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    150-300°C
+  </text>
+
+  <!-- Arrow 1 -->
+  <path d="M 230 220 L 280 220" stroke="#333" stroke-width="3" fill="none" marker-end="url(#garrowhead)"/>
+
+  <!-- Block 2: Heat Exchanger -->
+  <rect x="280" y="140" width="200" height="160" rx="20" fill="url(#ggr2)" filter="url(#gshadow)"/>
+  <text x="380" y="190" font-size="22" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    Heat
+  </text>
+  <text x="380" y="210" font-size="22" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    Exchanger
+  </text>
+  <text x="380" y="235" font-size="13" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    Energy transfer
+  </text>
+
+  <!-- Arrow 2 -->
+  <path d="M 480 220 L 530 220" stroke="#333" stroke-width="3" fill="none" marker-end="url(#garrowhead)"/>
+
+  <!-- Block 3: Steam Generation -->
+  <rect x="530" y="140" width="200" height="160" rx="20" fill="url(#ggr3)" filter="url(#gshadow)"/>
+  <text x="630" y="190" font-size="22" font-weight="bold" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">
+    Steam
+  </text>
+  <text x="630" y="210" font-size="22" font-weight="bold" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">
+    Generation
+  </text>
+  <text x="630" y="235" font-size="13" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">
+    High pressure
+  </text>
+
+  <!-- Arrow 3 -->
+  <path d="M 730 220 L 780 220" stroke="#333" stroke-width="3" fill="none" marker-end="url(#garrowhead)"/>
+
+  <!-- Block 4: Turbine -->
+  <rect x="780" y="140" width="200" height="160" rx="20" fill="url(#ggr2)" filter="url(#gshadow)"/>
+  <text x="880" y="190" font-size="22" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    Turbine
+  </text>
+  <text x="880" y="215" font-size="13" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    Steam spins
+  </text>
+  <text x="880" y="232" font-size="13" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    turbine blades
+  </text>
+
+  <!-- Arrow 4 -->
+  <path d="M 980 220 L 1030 220" stroke="#333" stroke-width="3" fill="none" marker-end="url(#garrowhead)"/>
+
+  <!-- Block 5: Generator -->
+  <rect x="1030" y="140" width="200" height="160" rx="20" fill="url(#ggr4)" filter="url(#gshadow)"/>
+  <text x="1130" y="190" font-size="22" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    Generator
+  </text>
+  <text x="1130" y="215" font-size="13" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    Converts to
+  </text>
+  <text x="1130" y="232" font-size="13" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    electricity
+  </text>
+
+  <!-- Arrow 5 -->
+  <path d="M 1230 220 L 1280 220" stroke="#333" stroke-width="3" fill="none" marker-end="url(#garrowhead)"/>
+
+  <!-- Block 6: Power Output -->
+  <rect x="1280" y="140" width="180" height="160" rx="20" fill="url(#ggr5)" filter="url(#gshadow)"/>
+  <text x="1370" y="195" font-size="22" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    Power
+  </text>
+  <text x="1370" y="215" font-size="22" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    Output
+  </text>
+  <text x="1370" y="240" font-size="13" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    24/7 baseload
+  </text>
+  <text x="1370" y="257" font-size="13" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    power
+  </text>
+
+  <!-- Return Loop - Cooled Fluid -->
+  <path d="M 880 300 L 880 380 L 130 380 L 130 300" stroke="#1e90ff" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#garrowhead2)"/>
+  <text x="505" y="410" font-size="12" text-anchor="middle" fill="#1e90ff" font-family="Arial, sans-serif" font-style="italic">
+    Cooled fluid recycled back to reservoir
+  </text>
+
+  <!-- Top label: Power flow -->
+  <text x="505" y="125" font-size="11" text-anchor="middle" fill="#666" font-family="Arial, sans-serif">
+    Thermal Energy Flow
+  </text>
+
+  <!-- Summary Box -->
+  <rect x="30" y="480" width="1430" height="150" rx="15" fill="#f0f0f0" stroke="#666" stroke-width="2"/>
+  <text x="745" y="510" font-size="16" font-weight="bold" text-anchor="middle" fill="#1a1a1a" font-family="Arial, sans-serif">
+    Process Summary: Geothermal Heat to Electricity
+  </text>
+  <text x="745" y="540" font-size="13" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">
+    Hot geothermal water (150-300°C) from underground wells → Heat exchanger transfers thermal energy → Steam generation at high pressure →
+  </text>
+  <text x="745" y="565" font-size="13" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">
+    High-pressure steam drives turbine blades → Rotating turbine spins generator → Electricity production through electromagnetic induction →
+  </text>
+  <text x="745" y="590" font-size="13" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">
+    24/7 baseload power to grid | Cooled fluid recycled back to reservoir | Completely renewable cycle with zero emissions
+  </text>
+
+  <!-- Key metrics box -->
+  <rect x="30" y="650" width="1430" height="35" rx="10" fill="#e8f4f8" stroke="#1e90ff" stroke-width="1"/>
+  <text x="745" y="672" font-size="12" text-anchor="middle" fill="#006994" font-family="Arial, sans-serif">
+    Temperature Range: 150-300°C | Capacity Factor: 70-90% | System Efficiency: 10-15% | Baseload Power: 24/7 Operation
+  </text>
+</svg>

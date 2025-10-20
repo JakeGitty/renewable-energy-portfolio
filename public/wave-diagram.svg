@@ -1,68 +1,133 @@
-<svg viewBox="0 0 1400 750" className="w-full bg-white rounded-md">
-      <defs>
-        <linearGradient id="wgrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#006994" stopOpacity="1" />
-          <stop offset="100%" stopColor="#0099cc" stopOpacity="1" />
-        </linearGradient>
-        <linearGradient id="wgrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#00ccff" stopOpacity="1" />
-          <stop offset="100%" stopColor="#00e6ff" stopOpacity="1" />
-        </linearGradient>
-        <linearGradient id="wgrad3" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#ff8c00" stopOpacity="1" />
-          <stop offset="100%" stopColor="#ffa500" stopOpacity="1" />
-        </linearGradient>
-        <linearGradient id="wgrad4" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#ffd700" stopOpacity="1" />
-          <stop offset="100%" stopColor="#ffed4e" stopOpacity="1" />
-        </linearGradient>
-        <linearGradient id="wgrad5" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#228b22" stopOpacity="1" />
-          <stop offset="100%" stopColor="#32cd32" stopOpacity="1" />
-        </linearGradient>
-        <linearGradient id="wgrad6" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#20b2aa" stopOpacity="1" />
-          <stop offset="100%" stopColor="#48d1cc" stopOpacity="1" />
-        </linearGradient>
-        <filter id="wshadow">
-          <feDropShadow dx="2" dy="2" stdDeviation="3" floodOpacity="0.3"/>
-        </filter>
-        <marker id="warrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-          <polygon points="0 0, 10 3, 0 6" fill="#333"/>
-        </marker>
-      </defs>
-      <text x="700" y="45" fontSize="28" fontWeight="bold" textAnchor="middle" fill="#333">Wave Energy Conversion</text>
-      <rect x="40" y="100" width="160" height="120" rx="10" fill="url(#wgrad1)" filter="url(#wshadow)"/>
-      <text x="120" y="135" fontSize="14" fontWeight="bold" textAnchor="middle" fill="white">Wave Energy</text>
-      <text x="120" y="155" fontSize="10" textAnchor="middle" fill="white">2-5m waves</text>
-      <path d="M 200 160 L 235 160" stroke="#333" strokeWidth="2" fill="none" markerEnd="url(#warrow)"/>
-      <rect x="235" y="100" width="160" height="120" rx="10" fill="url(#wgrad2)" filter="url(#wshadow)"/>
-      <text x="315" y="135" fontSize="14" fontWeight="bold" textAnchor="middle" fill="#1a1a1a">Wave Capture</text>
-      <text x="315" y="155" fontSize="10" textAnchor="middle" fill="#1a1a1a">Buoys/Floats</text>
-      <path d="M 395 160 L 430 160" stroke="#333" strokeWidth="2" fill="none" markerEnd="url(#warrow)"/>
-      <rect x="430" y="100" width="160" height="120" rx="10" fill="url(#wgrad3)" filter="url(#wshadow)"/>
-      <text x="510" y="130" fontSize="13" fontWeight="bold" textAnchor="middle" fill="white">Mechanical</text>
-      <text x="510" y="147" fontSize="13" fontWeight="bold" textAnchor="middle" fill="white">Conversion</text>
-      <path d="M 590 160 L 625 160" stroke="#333" strokeWidth="2" fill="none" markerEnd="url(#warrow)"/>
-      <rect x="625" y="100" width="160" height="120" rx="10" fill="url(#wgrad4)" filter="url(#wshadow)"/>
-      <text x="705" y="135" fontSize="14" fontWeight="bold" textAnchor="middle" fill="#333">Generator</text>
-      <text x="705" y="155" fontSize="10" textAnchor="middle" fill="#333">Electricity</text>
-      <path d="M 785 160 L 820 160" stroke="#333" strokeWidth="2" fill="none" markerEnd="url(#warrow)"/>
-      <rect x="820" y="100" width="160" height="120" rx="10" fill="url(#wgrad5)" filter="url(#wshadow)"/>
-      <text x="900" y="130" fontSize="13" fontWeight="bold" textAnchor="middle" fill="white">Reverse</text>
-      <text x="900" y="147" fontSize="13" fontWeight="bold" textAnchor="middle" fill="white">Osmosis</text>
-      <path d="M 980 160 L 1015 160" stroke="#333" strokeWidth="2" fill="none" markerEnd="url(#warrow)"/>
-      <rect x="1015" y="100" width="160" height="120" rx="10" fill="url(#wgrad6)" filter="url(#wshadow)"/>
-      <text x="1095" y="135" fontSize="14" fontWeight="bold" textAnchor="middle" fill="white">Fresh Water</text>
-      <text x="1095" y="155" fontSize="10" textAnchor="middle" fill="white">Output</text>
-      <path d="M 705 220 L 705 280 L 120 280 L 120 220" stroke="#8B4513" strokeWidth="2" fill="none" strokeDasharray="5,5" markerEnd="url(#warrow)"/>
-      <text x="410" y="300" fontSize="10" textAnchor="middle" fill="#8B4513" fontStyle="italic">Brine returned to ocean</text>
-      <rect x="40" y="340" width="1320" height="370" rx="8" fill="#f5f5f5" stroke="#ddd" strokeWidth="1"/>
-      <text x="700" y="365" fontSize="14" fontWeight="bold" textAnchor="middle" fill="#333">Process Summary</text>
-      <text x="60" y="395" fontSize="11" fill="#333">Energy Conversion: Ocean waves energize buoys and floats positioned offshore. Mechanical motion transfers to hydraulic pumps, which drive turbines connected to generators, producing continuous electrical power from renewable wave motion with zero emissions.</text>
-      <text x="60" y="425" fontSize="11" fill="#333">Desalination: Generated electricity powers reverse osmosis membranes that separate fresh water from seawater through high-pressure filtration. Fresh potable water is distributed to coastal communities, while concentrated brine is safely returned to the ocean.</text>
-      <text x="60" y="460" fontSize="11" fontWeight="bold" fill="#333">Key Metrics:</text>
-      <text x="60" y="480" fontSize="10" fill="#333">Wave Power Density: 2-5 kW/m² | System Efficiency: 30-45% | Desalination Capacity: 1,000-5,000 m³/day</text>
-      <text x="60" y="500" fontSize="10" fill="#333">Environmental Impact: Sustainable | Carbon Footprint: Zero | Operating Cost: Low maintenance</text>
-      <text x="700" y="700" fontSize="9" textAnchor="middle" fill="#666" fontStyle="italic">Wave energy + Desalination = Sustainable fresh water solution for coastal regions</text>
-    </svg>
+<svg viewBox="0 0 1400 750" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#006994;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ccff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00e6ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff8c00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffa500;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffed4e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#32cd32;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00fa9a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#228b22;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#32cd32;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="700" y="45" font-size="38" font-weight="bold" text-anchor="middle" fill="#1a1a1a" font-family="Arial, sans-serif">
+    Wave Energy Conversion System for Coastal Desalination
+  </text>
+
+  <!-- Block 1: Wave Energy Source -->
+  <rect x="40" y="120" width="180" height="140" rx="15" fill="url(#grad1)" filter="url(#shadow)"/>
+  <text x="130" y="155" font-size="18" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">Wave Energy</text>
+  <text x="130" y="178" font-size="12" text-anchor="middle" fill="white" font-family="Arial, sans-serif">Ocean waves at</text>
+  <text x="130" y="195" font-size="12" text-anchor="middle" fill="white" font-family="Arial, sans-serif">coastal region</text>
+  <text x="130" y="218" font-size="10" text-anchor="middle" fill="#e0f6ff" font-family="Arial, sans-serif" font-style="italic">2-5m waves</text>
+
+  <!-- Arrow 1 -->
+  <path d="M 220 190 L 260 190" stroke="#333" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Block 2: Wave Capture Device -->
+  <rect x="260" y="120" width="180" height="140" rx="15" fill="url(#grad2)" filter="url(#shadow)"/>
+  <text x="350" y="155" font-size="18" font-weight="bold" text-anchor="middle" fill="#1a1a1a" font-family="Arial, sans-serif">Wave Capture</text>
+  <text x="350" y="178" font-size="12" text-anchor="middle" fill="#1a1a1a" font-family="Arial, sans-serif">Buoys/floats</text>
+  <text x="350" y="195" font-size="12" text-anchor="middle" fill="#1a1a1a" font-family="Arial, sans-serif">absorb energy</text>
+
+  <!-- Arrow 2 -->
+  <path d="M 440 190 L 480 190" stroke="#333" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Block 3: Mechanical Conversion -->
+  <rect x="480" y="120" width="180" height="140" rx="15" fill="url(#grad3)" filter="url(#shadow)"/>
+  <text x="570" y="148" font-size="16" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">Mechanical</text>
+  <text x="570" y="168" font-size="16" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">Conversion</text>
+  <text x="570" y="190" font-size="11" text-anchor="middle" fill="white" font-family="Arial, sans-serif">Hydraulic pump</text>
+  <text x="570" y="205" font-size="11" text-anchor="middle" fill="white" font-family="Arial, sans-serif">motion</text>
+
+  <!-- Arrow 3 -->
+  <path d="M 660 190 L 700 190" stroke="#333" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Block 4: Electrical Generation -->
+  <rect x="700" y="120" width="180" height="140" rx="15" fill="url(#grad4)" filter="url(#shadow)"/>
+  <text x="790" y="155" font-size="18" font-weight="bold" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">Generator</text>
+  <text x="790" y="178" font-size="12" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">Hydraulic motor</text>
+  <text x="790" y="195" font-size="12" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">generates power</text>
+
+  <!-- Arrow 4 -->
+  <path d="M 880 190 L 920 190" stroke="#333" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Block 5: Reverse Osmosis -->
+  <rect x="920" y="120" width="180" height="140" rx="15" fill="url(#grad5)" filter="url(#shadow)"/>
+  <text x="1010" y="148" font-size="16" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">Reverse</text>
+  <text x="1010" y="168" font-size="16" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">Osmosis</text>
+  <text x="1010" y="190" font-size="11" text-anchor="middle" fill="white" font-family="Arial, sans-serif">Desalination of</text>
+  <text x="1010" y="205" font-size="11" text-anchor="middle" fill="white" font-family="Arial, sans-serif">seawater</text>
+
+  <!-- Arrow 5 -->
+  <path d="M 1100 190 L 1140 190" stroke="#333" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Block 6: Fresh Water Output -->
+  <rect x="1140" y="120" width="180" height="140" rx="15" fill="url(#grad6)" filter="url(#shadow)"/>
+  <text x="1230" y="148" font-size="16" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">Fresh Water</text>
+  <text x="1230" y="168" font-size="16" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">Output</text>
+  <text x="1230" y="190" font-size="11" text-anchor="middle" fill="white" font-family="Arial, sans-serif">Potable water for</text>
+  <text x="1230" y="205" font-size="11" text-anchor="middle" fill="white" font-family="Arial, sans-serif">communities</text>
+
+  <!-- Return Loop - Brine Discharge -->
+  <path d="M 790 260 L 790 320 L 130 320 L 130 260" stroke="#8B4513" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+  <text x="460" y="340" font-size="11" text-anchor="middle" fill="#8B4513" font-family="Arial, sans-serif" font-style="italic">Brine (concentrated salt) returned to ocean</text>
+
+  <!-- Summary Section Title -->
+  <rect x="40" y="390" width="1320" height="30" rx="10" fill="#333333"/>
+  <text x="700" y="412" font-size="18" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">Process Summary: Wave Energy to Fresh Water</text>
+
+  <!-- Summary Box 1 -->
+  <rect x="40" y="430" width="640" height="120" rx="12" fill="#f0f8ff" stroke="#0099cc" stroke-width="2"/>
+  <text x="360" y="455" font-size="13" font-weight="bold" text-anchor="middle" fill="#006994" font-family="Arial, sans-serif">Energy Conversion Stage</text>
+  <text x="360" y="478" font-size="11" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">Ocean waves (2-5m) energize buoys and floats positioned offshore.</text>
+  <text x="360" y="495" font-size="11" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">Mechanical motion transfers to hydraulic pumps, which drive turbines</text>
+  <text x="360" y="512" font-size="11" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">connected to generators. Electrical power is produced continuously</text>
+  <text x="360" y="529" font-size="11" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">from renewable wave motion with zero emissions.</text>
+
+  <!-- Summary Box 2 -->
+  <rect x="720" y="430" width="640" height="120" rx="12" fill="#f0fff0" stroke="#32cd32" stroke-width="2"/>
+  <text x="1040" y="455" font-size="13" font-weight="bold" text-anchor="middle" fill="#228b22" font-family="Arial, sans-serif">Desalination Stage</text>
+  <text x="1040" y="478" font-size="11" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">Generated electricity powers reverse osmosis (RO) membranes that</text>
+  <text x="1040" y="495" font-size="11" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">separate fresh water from seawater through high-pressure filtration.</text>
+  <text x="1040" y="512" font-size="11" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">Fresh potable water is distributed to coastal communities, while</text>
+  <text x="1040" y="529" font-size="11" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">concentrated brine is safely returned to the ocean.</text>
+
+  <!-- Key Metrics Box -->
+  <rect x="40" y="570" width="1320" height="70" rx="12" fill="#fffacd" stroke="#ff8c00" stroke-width="2"/>
+  <text x="700" y="595" font-size="13" font-weight="bold" text-anchor="middle" fill="#ff6347" font-family="Arial, sans-serif">Key Performance Metrics</text>
+  <text x="700" y="618" font-size="11" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">
+    Wave Power Density: 2-5 kW/m² | System Efficiency: 30-45% | Desalination Capacity: 1,000-5,000 m³/day
+  </text>
+  <text x="700" y="638" font-size="11" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">
+    Environmental Impact: Sustainable | Carbon Footprint: Zero | Operating Cost: Low maintenance
+  </text>
+
+  <!-- Footer -->
+  <text x="700" y="710" font-size="10" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-style="italic">
+    Completely renewable system: Wave energy + Desalination = Sustainable fresh water solution for coastal regions
+  </text>
+</svg>
