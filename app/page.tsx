@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const Portfolio = () => {
   const [activeActivity, setActiveActivity] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // New state for mobile menu
 
   const activities = [
     {
@@ -294,9 +295,45 @@ return (
       <div className="absolute inset-0 z-0 bg-radial-gradient"></div>
 
       {/* MAIN LAYOUT */}
-      <div className="relative z-10 flex gap-6 px-6 py-8">
-        {/* LEFT SIDEBAR - Always on left */}
-        <div className="w-80 flex-shrink-0">
+      <div className="relative z-10 flex gap-6 px-6 py-8 md:flex-row flex-col">
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex justify-end mb-4">
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-white p-2 rounded-md bg-white/10 hover:bg-white/20 transition-colors"
+          >
+            {isMobileMenuOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Menu Overlay (backdrop) */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 bg-black/50 z-10 md:hidden"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+          )}
+        </AnimatePresence>
+
+        {/* LEFT SIDEBAR - Conditional visibility and animation for mobile */}
+        <motion.div
+          initial={false}
+          animate={{ x: isMobileMenuOpen ? 0 : '-100%' }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
+          className={`w-80 flex-shrink-0 fixed inset-y-0 left-0 bg-slate-900 z-20 p-6 transform md:relative md:block md:translate-x-0 ${isMobileMenuOpen ? 'block' : 'hidden md:block'}`}>
           <div className="space-y-3 sticky top-24">
             {/* Moved header content */}
             <div className="mb-6 px-4">
@@ -309,7 +346,7 @@ return (
             {activities.map((activity) => (
               <button
                 key={activity.id}
-                onClick={() => setActiveActivity(activity.id)}
+                onClick={() => { setActiveActivity(activity.id); if (isMobileMenuOpen) setIsMobileMenuOpen(false); }}
                 className={`w-full text-left px-4 py-3 rounded-lg font-medium flex items-center gap-3 transition-all duration-300 ease-in-out transform ${
                   activeActivity === activity.id
                     ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/30 scale-105'
@@ -321,7 +358,7 @@ return (
               </button>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* RIGHT CONTENT AREA - Flexible */}
         <div className="flex-1 min-w-0">
