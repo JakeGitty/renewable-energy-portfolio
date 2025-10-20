@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image'; // Import the Image component
+import Navbar from './components/Navbar'; // Import the new Navbar component
 
 const Portfolio = () => {
   const [activeActivity, setActiveActivity] = useState(0);
@@ -114,6 +115,11 @@ const Portfolio = () => {
   };
   return (
     <>
+      {/* Navbar for mobile only */}
+      <div className="md:hidden">
+        <Navbar />
+      </div>
+
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
         {/* Radial gradient effect */}
         <div className="absolute inset-0 z-0 bg-radial-gradient"></div>
@@ -121,6 +127,8 @@ const Portfolio = () => {
         {/* MAIN LAYOUT */}
         <div className="relative z-10 flex gap-6 px-6 py-8">
           {/* Mobile Menu Button - visible only on mobile */}
+          {/* REMOVED: This is replaced by the new Navbar component */}
+          {/*
           <div className="md:hidden flex justify-end mb-4">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -137,8 +145,11 @@ const Portfolio = () => {
               )}
             </button>
           </div>
+          */}
 
           {/* Mobile Menu Overlay (backdrop) */}
+          {/* REMOVED: This is replaced by the new Navbar component */}
+          {/*
           <AnimatePresence>
             {isMobileMenuOpen && (
               <motion.div
@@ -151,8 +162,11 @@ const Portfolio = () => {
               />
             )}
           </AnimatePresence>
+          */}
 
           {/* Mobile Sidebar (animated) - hidden on desktop */}
+          {/* REMOVED: This is replaced by the new Navbar component */}
+          {/*
           <AnimatePresence>
             {isMobileMenuOpen && (
               <motion.div
@@ -166,9 +180,10 @@ const Portfolio = () => {
               </motion.div>
             )}
           </AnimatePresence>
+          */}
 
           {/* Desktop Sidebar - hidden on mobile */}
-          <div className="hidden md:block w-80 flex-shrink-0">
+          <div className="hidden md:block w-80 flex-shrink-0 mt-8"> {/* Added mt-8 to offset fixed navbar */}
             <div className="space-y-3 sticky top-24">
               <SidebarContent />
             </div>
