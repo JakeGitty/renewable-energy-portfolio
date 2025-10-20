@@ -73,6 +73,34 @@ const Portfolio = () => {
 
   const current = activities[activeActivity];
 
+  // Reusable component for sidebar content
+  const SidebarContent = ({ onClose }: { onClose?: () => void }) => (
+    <>
+      {/* Moved header content */}
+      <div className="mb-6 px-4">
+        <h1 className="text-xl font-extrabold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent tracking-tight">
+          Clean & Green Energy Activities
+        </h1>
+        <p className="text-gray-400 text-xs mt-1">Submitted by Jaykar Samuel Rajesh - RA2311003011579</p>
+      </div>
+      <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider px-4">Activities</h3>
+      {activities.map((activity) => (
+        <button
+          key={activity.id}
+          onClick={() => { setActiveActivity(activity.id); onClose?.(); }}
+          className={`w-full text-left px-4 py-3 rounded-lg font-medium flex items-center gap-3 transition-all duration-300 ease-in-out transform ${
+            activeActivity === activity.id
+              ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/30 scale-105'
+              : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white hover:-translate-y-1 hover:scale-105'
+          }`}
+        >
+          <span className="text-xl">{activity.icon}</span>
+          <span className="text-sm">{activity.title === "Home" ? "Home" : `Activity ${activity.id}`}</span>
+        </button>
+      ))}
+    </>
+  );
+
   const WaveDiagram = () => (
     <svg viewBox="0 0 1400 750" className="w-full bg-white rounded-md">
       <defs>
@@ -338,30 +366,7 @@ return (
               transition={{ duration: 0.3, ease: 'easeOut' }}
               className="fixed inset-y-0 left-0 w-80 bg-slate-900 z-20 p-6 md:hidden"
             >
-              <div className="space-y-3 sticky top-24">
-                {/* Moved header content */}
-                <div className="mb-6 px-4">
-                  <h1 className="text-xl font-extrabold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent tracking-tight">
-                    Clean & Green Energy Activities
-                  </h1>
-                  <p className="text-gray-400 text-xs mt-1">Submitted by Jaykar Samuel Rajesh - RA2311003011579</p>
-                </div>
-                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider px-4">Activities</h3>
-                {activities.map((activity) => (
-                  <button
-                    key={activity.id}
-                    onClick={() => { setActiveActivity(activity.id); setIsMobileMenuOpen(false); }}
-                    className={`w-full text-left px-4 py-3 rounded-lg font-medium flex items-center gap-3 transition-all duration-300 ease-in-out transform ${
-                      activeActivity === activity.id
-                        ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/30 scale-105'
-                        : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white hover:-translate-y-1 hover:scale-105'
-                    }`}
-                  >
-                    <span className="text-xl">{activity.icon}</span>
-                    <span className="text-sm">{activity.title === "Home" ? "Home" : `Activity ${activity.id}`}</span>
-                  </button>
-                ))}
-              </div>
+              <SidebarContent onClose={() => setIsMobileMenuOpen(false)} />
             </motion.div>
           )}
         </AnimatePresence>
@@ -369,28 +374,7 @@ return (
         {/* Desktop Sidebar - hidden on mobile */}
         <div className="hidden md:block w-80 flex-shrink-0">
           <div className="space-y-3 sticky top-24">
-            {/* Moved header content */}
-            <div className="mb-6 px-4">
-              <h1 className="text-xl font-extrabold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent tracking-tight">
-                Clean & Green Energy Activities
-              </h1>
-              <p className="text-gray-400 text-xs mt-1">Submitted by Jaykar Samuel Rajesh - RA2311003011579</p>
-            </div>
-            <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider px-4">Activities</h3>
-            {activities.map((activity) => (
-              <button
-                key={activity.id}
-                onClick={() => setActiveActivity(activity.id)}
-                className={`w-full text-left px-4 py-3 rounded-lg font-medium flex items-center gap-3 transition-all duration-300 ease-in-out transform ${
-                  activeActivity === activity.id
-                    ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/30 scale-105'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white hover:-translate-y-1 hover:scale-105'
-                }`}
-              >
-                <span className="text-xl">{activity.icon}</span>
-                <span className="text-sm">{activity.title === "Home" ? "Home" : `Activity ${activity.id}`}</span>
-              </button>
-            ))}
+            <SidebarContent />
           </div>
         </div>
 
