@@ -295,8 +295,8 @@ return (
       <div className="absolute inset-0 z-0 bg-radial-gradient"></div>
 
       {/* MAIN LAYOUT */}
-      <div className="relative z-10 flex gap-6 px-6 py-8 md:flex-row flex-col">
-        {/* Mobile Menu Button */}
+      <div className="relative z-10 flex gap-6 px-6 py-8">
+        {/* Mobile Menu Button - visible only on mobile */}
         <div className="md:hidden flex justify-end mb-4">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -328,12 +328,46 @@ return (
           )}
         </AnimatePresence>
 
-        {/* LEFT SIDEBAR - Conditional visibility and animation for mobile */}
-        <motion.div
-          initial={false}
-          animate={{ x: isMobileMenuOpen ? 0 : '-100%' }}
-          transition={{ duration: 0.3, ease: 'easeOut' }}
-          className={`w-80 flex-shrink-0 fixed inset-y-0 left-0 bg-slate-900 z-20 p-6 transform md:relative md:block md:translate-x-0 ${isMobileMenuOpen ? 'block' : 'hidden md:block'}`}>
+        {/* Mobile Sidebar (animated) - hidden on desktop */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ x: '-100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '-100%' }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
+              className="fixed inset-y-0 left-0 w-80 bg-slate-900 z-20 p-6 md:hidden"
+            >
+              <div className="space-y-3 sticky top-24">
+                {/* Moved header content */}
+                <div className="mb-6 px-4">
+                  <h1 className="text-xl font-extrabold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent tracking-tight">
+                    Clean & Green Energy Activities
+                  </h1>
+                  <p className="text-gray-400 text-xs mt-1">Submitted by Jaykar Samuel Rajesh - RA2311003011579</p>
+                </div>
+                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider px-4">Activities</h3>
+                {activities.map((activity) => (
+                  <button
+                    key={activity.id}
+                    onClick={() => { setActiveActivity(activity.id); setIsMobileMenuOpen(false); }}
+                    className={`w-full text-left px-4 py-3 rounded-lg font-medium flex items-center gap-3 transition-all duration-300 ease-in-out transform ${
+                      activeActivity === activity.id
+                        ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/30 scale-105'
+                        : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white hover:-translate-y-1 hover:scale-105'
+                    }`}
+                  >
+                    <span className="text-xl">{activity.icon}</span>
+                    <span className="text-sm">{activity.title === "Home" ? "Home" : `Activity ${activity.id}`}</span>
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Desktop Sidebar - hidden on mobile */}
+        <div className="hidden md:block w-80 flex-shrink-0">
           <div className="space-y-3 sticky top-24">
             {/* Moved header content */}
             <div className="mb-6 px-4">
@@ -346,7 +380,7 @@ return (
             {activities.map((activity) => (
               <button
                 key={activity.id}
-                onClick={() => { setActiveActivity(activity.id); if (isMobileMenuOpen) setIsMobileMenuOpen(false); }}
+                onClick={() => setActiveActivity(activity.id)}
                 className={`w-full text-left px-4 py-3 rounded-lg font-medium flex items-center gap-3 transition-all duration-300 ease-in-out transform ${
                   activeActivity === activity.id
                     ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/30 scale-105'
@@ -358,7 +392,7 @@ return (
               </button>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* RIGHT CONTENT AREA - Flexible */}
         <div className="flex-1 min-w-0">
