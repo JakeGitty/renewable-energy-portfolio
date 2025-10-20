@@ -336,7 +336,7 @@ return (
                   <h2 className="text-5xl font-extrabold text-white">Clean and Green Energy Portfolio</h2>
                   <div className="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto rounded"></div>
                   <p className="text-xl text-gray-300">Submitted by Jaykar Samuel Rajesh</p>
-                  <p className="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto">{current.content}</p>
+                  <p className="text-gray-400 text-lg leading-relaxed max-w-4xl mx-auto">{current.content}</p>
                 </div>
               ) : (
                 <motion.div variants={cardVariants} className="space-y-6">
