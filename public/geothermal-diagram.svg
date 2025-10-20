@@ -31,6 +31,9 @@
     </marker>
   </defs>
 
+  <!-- Change this line: -->
+  <rect x="0" y="0" width="1500" height="700" fill="white"/>
+
   <!-- Title -->
   <text x="750" y="50" font-size="42" font-weight="bold" text-anchor="middle" fill="#1a1a1a" font-family="Arial, sans-serif">
     Geothermal Power Plant System for Electricity Generation
