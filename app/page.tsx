@@ -342,6 +342,12 @@ return (
                   <div className="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto rounded"></div>
                   <p className="text-xl text-gray-300">Submitted by Jaykar Samuel Rajesh</p>
                   <p className="text-gray-400 text-lg leading-relaxed max-w-4xl mx-auto">{current.content}</p>
+                  {/* Poem to fill empty space */}
+                  <div className="mt-8 text-center text-gray-400 font-serif text-sm italic space-y-1">
+                    <p>I love to dwell in forest wild, Where giant pine trees pierce the sky;</p>
+                    <p>A beauty spot where Nature smiled, A fitting place to live and die;</p>
+                    <p className="mt-2">E. F. Hayward</p>
+                  </div>
                 </div>
               ) : (
                 <motion.div variants={cardVariants} className="space-y-6">
