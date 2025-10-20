@@ -335,9 +335,9 @@ return (
               transition={{ duration: 0.4 }}
             >
               {current.isHome ? (
-                <div className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl p-12 border border-orange-500/20 text-center space-y-6 relative">
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-12 border border-white/20 text-center space-y-6 relative">
                   {/* Frosted glass effect for the main card */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 to-slate-800/50 rounded-2xl pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-white/5 rounded-2xl pointer-events-none"></div>
                   <h2 className="text-5xl font-extrabold text-white">Clean and Green Energy Portfolio</h2>
                   <div className="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto rounded"></div>
                   <p className="text-xl text-gray-300">Submitted by Jaykar Samuel Rajesh</p>
