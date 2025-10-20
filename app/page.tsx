@@ -6,6 +6,8 @@ import Image from 'next/image'; // Import the Image component
 const Portfolio = () => {
   const [activeActivity, setActiveActivity] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // New state for mobile menu
+  const [isImageExpanded, setIsImageExpanded] = useState(false);
+  const [expandedImageSrc, setExpandedImageSrc] = useState("");
 
   const activities = [
     {
@@ -212,9 +214,19 @@ const Portfolio = () => {
                     {/* Diagram Section */}
                     <motion.div variants={itemVariants} className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
                       <h3 className="text-lg font-bold text-orange-400 mb-4">System Architecture Diagram</h3>
-                      {current.diagram === "wave" && <Image src="/wave-diagram.svg" alt="Wave Energy Diagram" width={1400} height={750} layout="responsive" className="w-full rounded-md" />}
-                      {current.diagram === "geothermal" && <Image src="/geothermal-diagram.svg" alt="Geothermal Energy Diagram" width={1400} height={750} layout="responsive" className="w-full rounded-md" />}
-                      {current.diagram === "biomass" && <Image src="/biomass-diagram.svg" alt="Biomass Energy Diagram" width={1400} height={750} layout="responsive" className="w-full rounded-md" />}
+                      <div 
+                        className="block md:block cursor-pointer" 
+                        onClick={() => {
+                          if (window.innerWidth < 768) { // Tailwind's md breakpoint is 768px
+                            setExpandedImageSrc(current.diagram === "wave" ? "/wave-diagram.svg" : current.diagram === "geothermal" ? "/geothermal-diagram.svg" : "/biomass-diagram.svg");
+                            setIsImageExpanded(true);
+                          }
+                        }}
+                      >
+                        {current.diagram === "wave" && <Image src="/wave-diagram.svg" alt="Wave Energy Diagram" width={1400} height={750} layout="responsive" className="w-full rounded-md" />}
+                        {current.diagram === "geothermal" && <Image src="/geothermal-diagram.svg" alt="Geothermal Energy Diagram" width={1400} height={750} layout="responsive" className="w-full rounded-md" />}
+                        {current.diagram === "biomass" && <Image src="/biomass-diagram.svg" alt="Biomass Energy Diagram" width={1400} height={750} layout="responsive" className="w-full rounded-md" />}
+                      </div>
                     </motion.div>
 
                     {/* System Explanation */}
@@ -266,7 +278,49 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-    </>);
+
+      {/* Expanded Image View (Modal) - visible only on mobile */}
+      <AnimatePresence>
+        {isImageExpanded && ( 
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 md:hidden"
+            onClick={() => setIsImageExpanded(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
+              className="relative max-w-full max-h-full bg-white rounded-lg overflow-hidden shadow-xl"
+              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking on the image
+            >
+              <button
+                className="absolute top-3 right-3 text-white bg-black/50 rounded-full p-2 hover:bg-black/70 transition-colors z-10"
+                onClick={() => setIsImageExpanded(false)}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <Image
+                src={expandedImageSrc}
+                alt="Expanded Diagram"
+                width={1400}
+                height={750}
+                layout="intrinsic"
+                objectFit="contain"
+                className="w-full h-auto"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
 };
 
 export default Portfolio;
