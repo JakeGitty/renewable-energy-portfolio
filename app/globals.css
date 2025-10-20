@@ -25,3 +25,7 @@ body {
     rgb(var(--background-start-rgb));
   font-family: 'Inter', sans-serif;
 }
+
+.bg-radial-gradient {
+  background: radial-gradient(circle at center, rgba(140, 70, 0, 0.3) 0%, rgba(0,0,0,0) 50%);
+}
