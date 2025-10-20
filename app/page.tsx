@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image'; // Import the Image component
 
 const Portfolio = () => {
   const [activeActivity, setActiveActivity] = useState(0);
@@ -211,9 +212,9 @@ const Portfolio = () => {
                     {/* Diagram Section */}
                     <motion.div variants={itemVariants} className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]">
                       <h3 className="text-lg font-bold text-orange-400 mb-4">System Architecture Diagram</h3>
-                      {current.diagram === "wave" && <img src="/wave-diagram.svg" alt="Wave Energy Diagram" className="w-full rounded-md" />}
-                      {current.diagram === "geothermal" && <img src="/geothermal-diagram.svg" alt="Geothermal Energy Diagram" className="w-full rounded-md" />}
-                      {current.diagram === "biomass" && <img src="/biomass-diagram.svg" alt="Biomass Energy Diagram" className="w-full rounded-md" />}
+                      {current.diagram === "wave" && <Image src="/wave-diagram.svg" alt="Wave Energy Diagram" width={1400} height={750} layout="responsive" className="w-full rounded-md" />}
+                      {current.diagram === "geothermal" && <Image src="/geothermal-diagram.svg" alt="Geothermal Energy Diagram" width={1400} height={750} layout="responsive" className="w-full rounded-md" />}
+                      {current.diagram === "biomass" && <Image src="/biomass-diagram.svg" alt="Biomass Energy Diagram" width={1400} height={750} layout="responsive" className="w-full rounded-md" />}
                     </motion.div>
 
                     {/* System Explanation */}
