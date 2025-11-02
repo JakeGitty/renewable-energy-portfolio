@@ -86,6 +86,7 @@ const Portfolio = () => {
           Clean & Green Energy Activities
         </h1>
         <p className="text-gray-400 text-xs mt-1">Submitted by Jaykar Samuel Rajesh - RA2311003011579</p>
+        <p className="text-gray-400 text-xs">Department : Computing Technologies</p>
       </div>
       <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider px-4">Activities</h3>
       {activities.map((activity) => (
@@ -207,6 +208,7 @@ return (
                 <h2 className="text-5xl font-extrabold text-white">Clean and Green Energy Portfolio</h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto rounded"></div>
                 <p className="text-xl text-gray-300">Submitted by Jaykar Samuel Rajesh</p>
+                <p className="text-lg text-gray-300">Department : Computing Technologies</p>
                     <p className="text-gray-400 text-lg leading-relaxed max-w-4xl mx-auto">{current.content}</p>
                     {/* Poem to fill empty space */}
                     <div className="mt-8 text-center text-gray-400 font-serif text-sm italic space-y-1">
